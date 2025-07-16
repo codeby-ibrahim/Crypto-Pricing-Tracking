@@ -6,8 +6,11 @@ const Home = () => {
       <div className='hero'>
         <h1>Largest <br /> Crypto MarketPlace</h1>
         <p>Wellcome to the worlds largest carptocurrency MarketPlace. Sign up to explore more about Crypto</p>
+        <form>
+          <input type="text" placeholder='search Crypto' />
+          <button type='submit'>Search</button>
+        </form>
 
-        
       </div>
     </div>
   )
