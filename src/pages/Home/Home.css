@@ -22,5 +22,12 @@
 }
 .hero form{
     padding: 8px;
-    
+    width: 80px;
+    background-color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
 }
