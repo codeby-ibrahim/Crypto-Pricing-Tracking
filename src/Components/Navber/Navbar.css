@@ -1,52 +1,61 @@
-.navbar{
+.navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-     padding: 10px 20px;
+    padding: 10px 20px;
     color: #ddd;
-     border-bottom: 2px solid #3c3c3c; 
+    border-bottom: 2px solid #3c3c3c;
 }
-.navbar .logo{
+
+.navbar .logo {
     width: max(12vw, 120px);
 }
-.navbar ul{
+
+.navbar ul {
     display: flex;
     list-style: none;
+    font-size: 22px;
     gap: 40px;
 }
-.navbar ul li{
-     cursor: pointer;
+
+.navbar ul li {
+    cursor: pointer;
 }
-.nav-right{
+
+.nav-right {
     display: flex;
     align-items: center;
     gap: max(1vw, 12px);
 }
-.navbar select{
+
+.navbar select {
     padding: 5px 10px;
     border-radius: 5px;
     border: 2px solid white;
     background: transparent;
     color: white;
 }
-.navbar option{
+
+.navbar option {
     background-color: #090050;
     color: white;
 }
-.navbar button{
+
+.navbar button {
     display: flex;
     align-items: center;
     gap: 10px;
     padding: 10px 20px;
     border-radius: 20px;
     border: none;
-    font-size: 13px;
+    font-size: 12px;
     background: white;
     color: #393939;
     cursor: pointer;
     font-weight: 500;
 }
+
 .nav-right img {
-  width: 13px;
+    width: 13px;
 
 }
