@@ -10,6 +10,16 @@ const Home = () => {
           <input type="text" placeholder='search Crypto' />
           <button type='submit'>Search</button>
         </form>
+      </div>
+      <div className='crypto-taple'>
+        <div className='table-layout'>
+           <p>#</p>
+           <p>Coins</p>
+           <p>price</p>
+           <p></p>
+           <p></p>
+           <p></p>
+        </div>
 
       </div>
     </div>
