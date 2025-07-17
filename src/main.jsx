@@ -6,11 +6,11 @@ import { BrowserRouter} from 'react-router-dom'
 import CoincontextProvider from './context/Coincontext.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  <StrictMode>
   <BrowserRouter>
    <CoincontextProvider>
     <App />
    </CoincontextProvider>
   </BrowserRouter>
-  </React.StrictMode>,
+  </StrictMode>,
 )
