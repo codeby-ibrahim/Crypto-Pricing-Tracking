@@ -1,48 +1,48 @@
-const { createContext, useState, useEffect } = require("react")
+import React, { createContext, useState, useEffect } from 'react';
 
+export const CoinContext = createContext();
 
-export const Coincontext = createContext();
-
-const CoincontextProvider = (props) => {
+const CoinContextProvider = ({ children }) => {
   const [allCoin, setAllCoin] = useState([]);
-  const [currency, setcurrency] = useState({
+  const [currency, setCurrency] = useState({
     name: "usd",
-    Symbol: "$"
+    symbol: "$"
   });
 
   const fetchAllCoin = async () => {
-  const options = {
-    method: 'GET',
-    headers: {
-      accept: 'application/json',
-      'x-cg-demo-api-key': 'CG-91Na3gF37jLkMimFB9B4Ftwp'
+    try {
+      const response = await fetch(
+        `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency.name}`,
+        {
+          method: 'GET',
+          headers: {
+            accept: 'application/json',
+            'x-cg-demo-api-key': 'CG-91Na3gF37jLkMimFB9B4Ftwp'
+          }
+        }
+      );
+      const data = await response.json();
+      setAllCoin(data);
+    } catch (error) {
+      console.error("Error fetching coins:", error);
     }
   };
 
-  fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency.name}`, options)
-    .then(response => response.json())
-    .then(data => setAllCoin(data))
-    .catch(err => console.error(err));
+  useEffect(() => {
+    fetchAllCoin();
+  }, [currency.name]); // refetch when currency changes
+
+  const contextValue = {
+    allCoin,
+    currency,
+    setCurrency
+  };
+
+  return (
+    <CoinContext.Provider value={contextValue}>
+      {children}
+    </CoinContext.Provider>
+  );
 };
 
-
-useEffect (() =>{
-   fetchAllCoin();
-},[])
-
-
-
-
-
-  const contexvalue = {
-    allCoin,currency,setcurrency
-
-  }
-  return (
-    <Coincontext.Provider value={contexvalue}>
-      {props.children}
-    </Coincontext.Provider>
-  )
-}
-
-export default CoincontextProvider;
+export default CoinContextProvider;
