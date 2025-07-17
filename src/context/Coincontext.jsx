@@ -1,10 +1,15 @@
-const { createContext } = require("react")
+const { createContext, useState } = require("react")
 
 
 export const Coincontext = createContext();
 
 const CoincontextProvider = (props) => {
-    const 
+    const [allcoin, setallcoin] = useState([]);
+    const [currency, setcurrency] = useState({
+        name: "usd",
+        Symbol: "$"
+    });
+
 
 
 
