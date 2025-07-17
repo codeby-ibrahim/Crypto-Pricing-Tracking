@@ -2,12 +2,14 @@ import React, { useContext } from 'react'
 import './Navbar.css'
 import logo from '../../assets/logo.png'
 import arrow_icon from '../../assets/arrow_icon.png'
+import { Coincontext } from '../../context/Coincontext'
 
 
 const Navbar = () => {
-    const {setcurrency} = useContext
+    const {setcurrency} = useContext(Coincontext)
+    const currencyHandler = ()=>{
 
-    
+    }
   console.log(logo)
   return (
     <div className='navbar'>
@@ -19,7 +21,7 @@ const Navbar = () => {
         <li>Blog</li>
       </ul>
       <div className='nav-right'>
-        <select>
+        <select onChange={currencyHandler}>
           <option value={"USD"}>USD</option>
           <option value={"EUR"}>EUR</option>
           <option value={"INR"}>INR</option>
