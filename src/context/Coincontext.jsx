@@ -30,7 +30,7 @@ const CoinContextProvider = ({ children }) => {
 
   useEffect(() => {
     fetchAllCoin();
-  }, [currency.name]); // refetch when currency changes
+  }, [currency.name]);
 
   const contextValue = {
     allCoin,
@@ -46,3 +46,4 @@ const CoinContextProvider = ({ children }) => {
 };
 
 export default CoinContextProvider;
+''
