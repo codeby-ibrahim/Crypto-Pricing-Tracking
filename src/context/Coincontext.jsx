@@ -3,15 +3,18 @@ const { createContext } = require("react")
 
 export const Coincontext = createContext();
 
-const CoincontextProvider = (props)=>{
-     
-       const contexvalue = {
+const CoincontextProvider = (props) => {
+    const 
 
-       }
-    return(
+
+
+    const contexvalue = {
+
+    }
+    return (
         <Coincontext.Provider value={contexvalue}>
-         {props.children}
-        </Coincontext.Provider> 
+            {props.children}
+        </Coincontext.Provider>
     )
 }
 
