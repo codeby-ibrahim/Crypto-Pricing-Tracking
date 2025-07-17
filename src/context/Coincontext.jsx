@@ -35,6 +35,7 @@ useEffect (() =>{
 
 
   const contexvalue = {
+    allCoin,currency,setcurrency
 
   }
   return (
