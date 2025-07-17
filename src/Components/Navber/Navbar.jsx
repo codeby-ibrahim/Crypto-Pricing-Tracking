@@ -7,7 +7,30 @@ import { Coincontext } from '../../context/Coincontext'
 
 const Navbar = () => {
     const {setcurrency} = useContext(Coincontext)
-    const currencyHandler = ()=>{
+    const currencyHandler = (event)=>{
+      switch (event.targe.value){
+        case "usd" :{
+          setcurrency({name: "usd", Symbol: "$"})
+          break;
+        }
+        case "eur" :{
+          setcurrency({name: "eur", Symbol: "£"})
+          break;
+        }
+      
+        case "inr" :{
+          setcurrency({name: "inr", Symbol: "^"})
+          break;
+        }
+
+        default :{
+          setcurrency({name: "inr", Symbol: "^"})
+          break;
+        }
+        
+      }
+
+
 
     }
   console.log(logo)
