@@ -67,7 +67,8 @@
   top: 700px;
   max-width: 800px;
   margin: auto;
-  background: linear-gradient(rgba(80,3,255,015),rgba(105,2,153,0.15));
+ background: linear-gradient(rgba(80, 3, 255, 0.15), rgba(105, 2, 153, 0.15));
+
   border-radius: 15px;
 }
 .table-layout{
