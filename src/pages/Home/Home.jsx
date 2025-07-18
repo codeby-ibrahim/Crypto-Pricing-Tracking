@@ -4,30 +4,31 @@ import { CoinContext } from '../../context/Coincontext';
 
 const Home = () => {
   const { allCoin, currency } = useContext(CoinContext);
-  const [displayCoin, setDisplayCoin] = useState([]); // ✅ fixed typo
- 
+  const [displayCoin, setDisplayCoin] = useState([]);
+  const [input, setInput] = useState(''); // ✅ Added input state
+
   const inputHandler = (event) => {
-    setInput(event.target.value);
-    if (event.target.value === "") {
-        setDisplayCoin(allCoin);
+    const value = event.target.value;
+    setInput(value);
+
+    if (value === "") {
+      setDisplayCoin(allCoin);
     }
-}
+  };
 
-  const searchHandler = async(event) => {
+  const searchHandler = async (event) => {
     event.preventDefault();
-    const coin = await allCoin.falter((item) => {
-   return item.name.toLowerCase().includes(input.toLowerCase)
-    })
-    setDisplayCoin(coin);
-  }
-   
-
+    const filteredCoins = allCoin.filter((item) =>
+      item.name.toLowerCase().includes(input.toLowerCase())
+    );
+    setDisplayCoin(filteredCoins);
+  };
 
   useEffect(() => {
     if (Array.isArray(allCoin)) {
       setDisplayCoin(allCoin);
     } else {
-      setDisplayCoin([]); // fallback to empty array
+      setDisplayCoin([]);
     }
   }, [allCoin]);
 
@@ -35,9 +36,16 @@ const Home = () => {
     <div className='home'>
       <div className='hero'>
         <h1>Largest <br /> Crypto MarketPlace</h1>
-        <p>Welcome to the world’s largest cryptocurrency marketplace. Sign up to explore more about Crypto.</p>
-        <form>
-          <input type="text" placeholder='Search Crypto' />
+        <p>
+          Welcome to the world’s largest cryptocurrency marketplace. Sign up to explore more about Crypto.
+        </p>
+        <form onSubmit={searchHandler}>
+          <input
+            type="text"
+            placeholder='Search Crypto'
+            value={input}
+            onChange={inputHandler}
+          />
           <button type='submit'>Search</button>
         </form>
       </div>
