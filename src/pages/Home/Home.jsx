@@ -5,6 +5,23 @@ import { CoinContext } from '../../context/Coincontext';
 const Home = () => {
   const { allCoin, currency } = useContext(CoinContext);
   const [displayCoin, setDisplayCoin] = useState([]); // ✅ fixed typo
+ 
+  const inputHandler = (event) => {
+    setInput(event.target.value);
+    if (event.target.value === "") {
+        setDisplayCoin(allCoin);
+    }
+}
+
+  const searchHandler = async(event) => {
+    event.preventDefault();
+    const coin = await allCoin.falter((item) => {
+   return item.name.toLowerCase().includes(input.toLowerCase)
+    })
+    setDisplayCoin(coin);
+  }
+   
+
 
   useEffect(() => {
     if (Array.isArray(allCoin)) {
