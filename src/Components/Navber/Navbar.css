@@ -92,19 +92,15 @@
 /* ✅ Responsive Design for Mobile */
 @media (max-width: 576px) {
   .navbar {
-    padding: 15px;
+    padding: 20px 5px;
   }
 
   .navbar ul {
-    font-size: 16px;
-    gap: 10px;
+    display: none;
   }
 
-  .nav-right {
-    gap: 8px;
-  }
-
-  .navbar .logo {
-    width: 100px;
+  .navbar button img{
+    width: 12px;
+    color: #3de220;
   }
 }

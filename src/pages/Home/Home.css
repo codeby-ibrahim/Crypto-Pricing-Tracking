@@ -81,34 +81,66 @@
 .market-cap{
   text-align: right;
 }
-
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.2rem;
+/* Laptop & Large Tablets */
+@media (max-width: 900px) {
+  .navbar {
+    padding: 20px 8%;
   }
 
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .table-layout {
+  .navbar button {
+    gap: 8px;
+    padding: 8px 18px;
     font-size: 14px;
-    padding: 10px 12px;
   }
 }
 
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 1.8rem;
+/* Tablets */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 18px 5%;
   }
 
-  .hero input[type="text"],
-  .hero button {
+  .navbar ul {
+    display: none; /* Hide menu for smaller screens */
+  }
+
+  .navbar button img {
+    width: 14px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 576px) {
+  .navbar {
+    padding: 16px 4%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .navbar button {
     width: 100%;
+    padding: 10px 15px;
+    font-size: 13px;
   }
 
-  .table-layout {
-    grid-template-columns: 1fr 1fr;
-    min-width: 100%;
+  .navbar button img {
+    width: 12px;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 400px) {
+  .navbar {
+    padding: 14px 3%;
+  }
+
+  .navbar button {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .navbar button img {
+    width: 10px;
   }
 }
