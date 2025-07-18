@@ -21,17 +21,28 @@ fetch(`https://api.coingecko.com/api/v3/coins/${coinData}`, options)
     fetchCoinData
   },[currency])
 
-
+ if (coinData) {
   return (
     <div>
       <h2 className='coin'>
         <div className="coin-name">
-          <img src={coinData.image.large} alt="" />
-          <p><b>{coinData.Name} ({coinData.symbol})</b></p>
+          <img src={coinData.image.large} alt={coinData.name} />
+          <p><b>{coinData.name} ({coinData.symbol.toUpperCase()})</b></p>
         </div>
       </h2>
     </div>
-  )
+  );
+} else {
+  return (
+    <div className='spinner'> 
+     <div className='spin'>
+      
+     </div>
+    </div>
+  );
+}
+
+  
 }
 
 export default Coin
