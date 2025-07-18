@@ -1,61 +1,110 @@
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    color: #ddd;
-    border-bottom: 2px solid #3c3c3c;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  color: #ddd;
+  border-bottom: 2px solid #3c3c3c;
+  flex-wrap: wrap;
 }
 
 .navbar .logo {
-    width: max(12vw, 120px);
+  width: max(12vw, 120px);
 }
 
 .navbar ul {
-    display: flex;
-    list-style: none;
-    font-size: 22px;
-    gap: 40px;
+  display: flex;
+  list-style: none;
+  font-size: 22px;
+  gap: 40px;
+  padding: 0;
+  margin: 0;
 }
 
 .navbar ul li {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .nav-right {
-    display: flex;
-    align-items: center;
-    gap: max(1vw, 12px);
+  display: flex;
+  align-items: center;
+  gap: max(1vw, 12px);
 }
 
 .navbar select {
-    padding: 5px 10px;
-    border-radius: 5px;
-    border: 2px solid white;
-    background: transparent;
-    color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
 }
 
 .navbar option {
-    background-color: #090050;
-    color: white;
+  background-color: #090050;
+  color: white;
 }
 
 .navbar button {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 20px;
-    border-radius: 20px;
-    border: none;
-    font-size: 12px;
-    background: white;
-    color: #393939;
-    cursor: pointer;
-    font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  font-size: 12px;
+  background: white;
+  color: #393939;
+  cursor: pointer;
+  font-weight: 500;
 }
 
 .nav-right img {
-    width: 13px;
+  width: 13px;
+}
 
+/* ✅ Responsive Design for Tablets */
+@media (max-width: 992px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    font-size: 18px;
+    gap: 15px;
+  }
+
+  .nav-right {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .navbar button, .navbar select {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* ✅ Responsive Design for Mobile */
+@media (max-width: 576px) {
+  .navbar {
+    padding: 15px;
+  }
+
+  .navbar ul {
+    font-size: 16px;
+    gap: 10px;
+  }
+
+  .nav-right {
+    gap: 8px;
+  }
+
+  .navbar .logo {
+    width: 100px;
+  }
 }

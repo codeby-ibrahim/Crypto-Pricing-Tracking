@@ -81,3 +81,34 @@
 .market-cap{
   text-align: right;
 }
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .table-layout {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero input[type="text"],
+  .hero button {
+    width: 100%;
+  }
+
+  .table-layout {
+    grid-template-columns: 1fr 1fr;
+    min-width: 100%;
+  }
+}
