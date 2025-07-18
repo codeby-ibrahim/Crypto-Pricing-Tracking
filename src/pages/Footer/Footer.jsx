@@ -3,7 +3,11 @@ import './Footer.css'
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <div>
+        <p>Copyright @ 2024, Craptoplace - All Right Reserved</p>
+    </div>
+     
+
   )
 }
 
