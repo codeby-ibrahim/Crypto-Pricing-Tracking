@@ -26,7 +26,8 @@ fetch(`https://api.coingecko.com/api/v3/coins/${coinData}`, options)
     <div>
       <h2 className='coin'>
         <div className="coin-name">
-          <img src={coinid} alt="" />
+          <img src={coinData.image.large} alt="" />
+          
         </div>
       </h2>
     </div>
