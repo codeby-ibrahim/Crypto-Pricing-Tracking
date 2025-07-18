@@ -28,9 +28,11 @@ const Navbar = () => {
 
   return (
     <div className='navbar'>
+      <Link to={'./'}>
       <img src={logo} alt="Logo" className='logo'/>
+      </Link>
       <ul>
-        <li>Home</li>
+       <Link to={'./'}> <li>Home</li> </Link>
         <li>Features</li>
         <li>Pricing</li>
         <li>Blog</li>
